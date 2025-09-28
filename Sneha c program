@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int value;
+
+    // Simulate reading values repeatedly
+    while (1) {
+        printf("Enter sensor value (0-100, -1 to exit): ");
+        scanf("%d", &value);
+
+        if (value == -1) {
+            break; // Exit the loop if user enters -1
+        }
+
+        if (value < 0 || value > 100) {
+            printf("Invalid input. Please enter a value between 0 and 100.\n");
+            continue;
+        }
+
+        if (value < 50) {
+            printf("Car Switch: ON 🔛\n");
+        } else {
+            printf("Car Switch: OFF 🔴\n");
+        }
+    }
+
+    printf("Program ended.\n");
+    return 0;
+}
